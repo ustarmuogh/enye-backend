@@ -42,6 +42,12 @@ app.get('/api/rates', async (req, res) => {
     }
 })
 
+app.use('*', (req, res) => {
+    res.status(200).json({
+        "message": "Welcome to my Enye Backend :-D"
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`Server is up and running on port ${PORT}`);
 });
