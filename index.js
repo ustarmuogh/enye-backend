@@ -3,7 +3,7 @@ const axios = require('axios').default;
 
 const app = express();
 
-const PORT = '8050';
+const PORT = process.env.PORT || '8050';
 
 app.get('/api/rates', async (req, res) => {
     const { query } = req;
