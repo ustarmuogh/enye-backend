@@ -14,7 +14,7 @@ app.get('/api/rates', async (req, res) => {
     const formattedDate = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 
     try {
-        const response = await axios.get(`https://api.exchangeratesapi.io/latest?base=${query.base}`);
+        const response = await axios.get(`https://api.exchangeratesapi.io/latest?base=${query.base || 'USD'}`);
 
         let rates = {};
 
